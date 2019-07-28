@@ -1,6 +1,7 @@
 FROM alpine
-
 LABEL maintainer="Goran Angelkovski <goran@scaffolder.io>"
+# Install Bazel, Docker, Docker Compose, Docker Registry certificates
+# yq
 
 ARG VCS_REF
 ARG BUILD_DATE
@@ -21,4 +22,4 @@ RUN apk add --update ca-certificates \
  && rm /var/cache/apk/*
 
 WORKDIR /root
-ENTRYPOINT ["kubectl"]
+ENTRYPOINT ["/bin/bash"]
